@@ -1,5 +1,7 @@
 .venv
 __pycache__/
+*.py[cod]
+*$py.class
 .idea/
 *.pyc
 univesp_pi.db
