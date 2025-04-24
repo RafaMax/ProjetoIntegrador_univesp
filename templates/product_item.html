@@ -1,0 +1,22 @@
+<tr id="product-{{product.id}}">
+    <th scope="row">{{ product.id }}</th>
+    <td>{{ product.name }}</td>
+    <td>{{ product.category }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.quality }}</td>
+    <td>{{ product.seasonality }}</td>
+    <td>{{ product.climate_id }}</td>
+    <td>
+        <button class="btn btn-primary"
+            c-get="{{ url_for('product.product_edit_form', product_id=product.id) }}"
+            c-target="#product-form">
+                Edit
+        </button>
+
+        <button class="btn btn-danger"
+            c-delete="{{ url_for('product.delete_product', product_id=product.id) }}"
+            c-remove-closest="tr">
+                Delete
+        </button>
+    </td>
+</tr>
