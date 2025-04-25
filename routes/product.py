@@ -1,11 +1,12 @@
 from flask import Blueprint, render_template, request
 from database.models.product import Product
+
 product_route = Blueprint('product', __name__)
 
 @product_route.route('/')
 def products_list():
     products = Product.select()
-    return render_template('product_list.html',products=products)
+    return render_template('products_list.html',products=products)
 
 @product_route.route('/',methods=['POST'])
 def insert_product():

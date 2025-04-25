@@ -11,7 +11,7 @@ def configure_all(app):
 
 def configure_routes(app):
     app.register_blueprint(home_route)
-    app.register_blueprint(product_route,url_prefix='/product')
+    app.register_blueprint(product_route,url_prefix='/products')
 
 
 def configure_db():
