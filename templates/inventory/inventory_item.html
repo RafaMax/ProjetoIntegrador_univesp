@@ -1,0 +1,21 @@
+<tr id="inventory-{{inventory.id}}">
+    <th scope="row">{{ inventory.id }}</th>
+    <td>{{ inventory.product_id }}</td>
+    <td>{{ inventory.current_quantity }}</td>
+    <td>{{ inventory.losses }}</td>
+    <td>{{ inventory.entry }}</td>
+    <td>{{ inventory.exit }}</td>
+    <td>
+        <button class="btn btn-primary"
+            c-get="{{ url_for('inventory.inventory_edit_form', inventory_id=inventory.id) }}"
+            c-target="#inventory-form">
+                Edit
+        </button>
+
+        <button class="btn btn-danger"
+            c-delete="{{ url_for('inventory.delete_inventory', inventory_id=inventory.id) }}"
+            c-remove-closest="tr">
+                Delete
+        </button>
+    </td>
+</tr>
