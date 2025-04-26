@@ -15,6 +15,7 @@
 
         <button class="btn btn-danger"
             c-delete="{{ url_for('product.delete_product', product_id=product.id) }}"
+            c-target="#product-form"
             c-remove-closest="tr">
                 Delete
         </button>

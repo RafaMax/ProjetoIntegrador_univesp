@@ -57,4 +57,4 @@ def delete_product(product_id):
     product = Product.get_by_id(product_id)
     product.delete_instance()
 
-    return {'deleted': 'ok'}
+    return render_template('product/product_form.html', deleted_product = product)

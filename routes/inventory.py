@@ -56,4 +56,4 @@ def delete_inventory(inventory_id):
     inventory = Inventory.get_by_id(inventory_id)
     inventory.delete_instance()
 
-    return {'deleted': 'ok'}
+    return render_template('inventory/inventory_form.html', deleted_inventory = inventory)

@@ -7,9 +7,8 @@ $ pip install -r requirements.txt
 ```
 ### Se nao funcionar
 ```
-pip instal flask
+$ pip instal flask
 ```
-e
 ```
-pip install peewee
+$ pip install peewee
 ```
