@@ -1,4 +1,14 @@
 # ProjetoIntegrador_univesp
 Projeto Integrador Univesp, sistema web de compras
-Teste
-Leticia
+
+### install
+```
+$ pip install -r requirements.txt
+```
+### Se nao funcionar
+```
+$ pip instal flask
+```
+```
+$ pip install peewee
+```

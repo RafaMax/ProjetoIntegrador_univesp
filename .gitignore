@@ -1,0 +1,9 @@
+.venv
+__pycache__/
+.idea/
+*.py[cod]
+*$py.class
+*.pyc
+*.tmp
+*.log
+univesp_pi.db
