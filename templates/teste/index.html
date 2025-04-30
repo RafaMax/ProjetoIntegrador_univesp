@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNIVESP Integrative Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Product management</h1>
+
+        <div id="product-form" c-container=" {{url_for('product.product_form')}}"></div>
+
+        <hr>
+
+        <h2>List of products</h2>
+
+        <div c-container="{{url_for('product.products_list')}}"></div>
+
+    </div>
+
+    <div class="container">
+        <h1 class="text-center">Inventory management</h1>
+
+        <div id="inventory-form" c-container=" {{url_for('inventory.inventory_form')}}"></div>
+
+        <hr>
+
+        <h2>List of inventories</h2>
+
+        <div c-container="{{url_for('inventory.inventories_list')}}"></div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/cru.js')  }}"></script>
+</body>
+
+</html>
