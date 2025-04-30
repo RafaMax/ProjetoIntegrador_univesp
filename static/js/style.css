@@ -12,6 +12,14 @@ body{
     font-family: 'Outfit', sans-serif;
 }
 
+h1{
+    font-size: 28px;
+}
+
+h3{
+    color: #9FB5C4
+}
+
 .wrapper {
     display: flex;
 }
@@ -30,7 +38,7 @@ body{
     width: 90px;
     min-width: 90px;
     transition: all 0.25s ease-in-out;
-    background-color: #0b0f19;
+    background-color: #08519c;
     display: flex;
     flex-direction: column;
 }
@@ -54,11 +62,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #323c55;
+    background-color: #FFF;
 }
 
 .toggle-btn i{
-    color: #FFF;
+    color: #3182bd;
 }
 
 #sidebar.expand .sidebar-logo,
@@ -151,7 +159,7 @@ a.sidebar-link:hover{
     transition: all .2s ease-out;
 }
 
-.sidebar-dropdown.sidebar-link{
+.sidebar-dropdown .sidebar-link{
     position: relative;
     padding-left: 3rem;
     transition: all 0.5s;
@@ -175,7 +183,6 @@ a.sidebar-link:hover{
     color: #B8e2F2;
 }
 
-/* PAINEL PRINCIPAL */
 .navbar{
     background-color: #FFF;
     box-shadow: 0 0 2rem 0 rgba(33,37,41,.1);
@@ -185,8 +192,71 @@ a.sidebar-link:hover{
     min-width: 200px;
 }
 
-
 .avatar{
     height:40px;
     width:40px;
+}
+
+.card{
+    background-color: #FFF;
+    transition: .4s;
+    cursor: pointer;
+    color: #000;
+    margin-bottom: 1rem;
+    border-color: rgba(231,234,243,0.7);
+}
+
+.card h6{
+    text-transform: uppercase;
+    font-size: .7161rem;
+    margin-bottom: .25rem;
+}
+
+.card:hover{
+    background-color: #9ecae1;
+    color: #3182BD;
+    transform: translateY(-10.5px)
+}
+
+.content{
+    flex: 11auto;
+}
+
+footer{
+    background-color: #f5f5f5;
+    padding: 1rem .875rem;
+}
+
+@media (min-width:768px){
+
+    .input-group-navbar .form-control:focus{
+        outline:none;
+        box-shadow: 0 0 0 0 rgba(255,255,255);
+        border: none;
+        background-color: #f5f5f5;
+    }
+
+    .input-group-navbar{
+        max-width: 320px;
+    }
+    .input-group-navbar .form-control{
+        color: #3e4455;
+        background-color: #f5f5f5;
+        height: calc(2.44375rem + 2px);
+    }
+
+    .input-group-navbar .btn{
+        color: #000;
+        background: #f5f5f5;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .input-group-navbar .btn:active {
+        background-color: #f5f5f5;
+    }
+
+    .navbar-expand .navbar-nav .dropdown-menu{
+        box-shadow: 0 .1rem 2rem rgba(0,0,0,.05)
+    }
 }
