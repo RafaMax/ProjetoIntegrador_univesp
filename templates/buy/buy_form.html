@@ -1,0 +1,56 @@
+<form class="c-form"
+        {% if buy %}
+            action="{{ url_for('buy.update_buy', buy_id=buy.id) }}"
+        {% else %}
+            action="{{ url_for('buy.insert_buy') }}"
+        {% endif %}
+
+        method="{% if buy %}PUT{% else %}POST{% endif %}"
+
+        {% if buy %}
+            c-swap="#buy-{{buy.id}}"
+        {% else %}
+            c-append="#buys_list"
+        {% endif %}
+
+        c-reload-container="true">
+
+    <div class="mb-3">
+      <label class="form-label">Buy id</label>
+      <input type="number" class="form-control" name="buy_id" {% if buy %}value="{{buy.buy_id}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="date" class="form-control" name="date" {% if buy %}value="{{buy.date}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input type="number" class="form-control" name="quantity" {% if buy %}value="{{buy.quantity}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Product id</label>
+        <input type="number" class="form-control" name="product_id" {% if buy %}value="{{buy.product_id}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Provider id</label>
+        <input type="number" class="form-control" name="provider_id" {% if buy %}value="{{buy.provider_id}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Cost</label>
+        <input type="number" class="form-control" name="cost" {% if buy %}value="{{buy.cost}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">User id</label>
+        <input type="number" class="form-control" name="user_id" {% if buy %}value="{{buy.user_id}}"{% endif %}>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        {% if buy %}Save{% else %}Create{% endif %}
+    </button>
+</form>

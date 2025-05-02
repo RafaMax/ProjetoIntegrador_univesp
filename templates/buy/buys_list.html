@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Buy id</th>
+        <th scope="col">Date</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Product id</th>
+        <th scope="col">Provider id</th>
+        <th scope="col">Cost</th>
+        <th scope="col">User id</th>
+      </tr>
+    </thead>
+    <tbody id="buys_list">
+
+        {% for buy in buys %}
+            {% include 'buy_item.html' %}
+        {% endfor %}
+
+    </tbody>
+  </table>

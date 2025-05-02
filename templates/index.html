@@ -34,6 +34,19 @@
 
     </div>
 
+    <div class="container">
+      <h1 class="text-center">Buy management</h1>
+
+      <div id="buy-form" c-container=" {{url_for('buy.buy_form')}}"></div>
+
+      <hr>
+
+      <h2>List of buys</h2>
+
+      <div c-container="{{url_for('buy.buys_list')}}"></div>
+
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/cru.js')  }}"></script>
   </body>
