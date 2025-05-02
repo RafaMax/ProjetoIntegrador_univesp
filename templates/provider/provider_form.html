@@ -1,0 +1,41 @@
+<form class="c-form"
+        {% if provider %}
+            action="{{ url_for('provider.update_provider', provider_id=provider.id) }}"
+        {% else %}
+            action="{{ url_for('provider.insert_provider') }}"
+        {% endif %}
+
+        method="{% if provider %}PUT{% else %}POST{% endif %}"
+
+        {% if provider %}
+            c-swap="#provider-{{provider.id}}"
+        {% else %}
+            c-append="#providers_list"
+        {% endif %}
+
+        c-reload-container="true">
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" {% if provider %}value="{{provider.name}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Contact</label>
+        <input type="text" class="form-control" name="contact" {% if provider %}value="{{provider.contact}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Quality assessed</label>
+        <input type="text" class="form-control" name="quality_assessed" {% if provider %}value="{{provider.quality_assessed}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Product type</label>
+        <input type="text" class="form-control" name="product_type" {% if provider %}value="{{provider.product_type}}"{% endif %}>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        {% if provider %}Save{% else %}Create{% endif %}
+    </button>
+</form>

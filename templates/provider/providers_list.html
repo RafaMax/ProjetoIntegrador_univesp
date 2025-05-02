@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Quality assessed</th>
+        <th scope="col">Product type</th>
+      </tr>
+    </thead>
+    <tbody id="providers_list">
+
+        {% for provider in providers %}
+            {% include 'provider_item.html' %}
+        {% endfor %}
+
+    </tbody>
+  </table>

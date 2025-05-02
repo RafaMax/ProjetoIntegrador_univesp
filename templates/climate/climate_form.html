@@ -1,0 +1,36 @@
+<form class="c-form"
+        {% if climate %}
+            action="{{ url_for('climate.update_climate', climate_id=climate.id) }}"
+        {% else %}
+            action="{{ url_for('climate.insert_climate') }}"
+        {% endif %}
+
+        method="{% if climate %}PUT{% else %}POST{% endif %}"
+
+        {% if climate %}
+            c-swap="#climate-{{climate.id}}"
+        {% else %}
+            c-append="#climates_list"
+        {% endif %}
+
+        c-reload-container="true">
+
+    <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="date" class="form-control" name="date" {% if climate %}value="{{climate.date}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Temperature</label>
+        <input type="number" class="form-control" name="temperature" {% if climate %}value="{{climate.temperature}}"{% endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Product impact</label>
+        <input type="text" class="form-control" name="product_impact" {% if climate %}value="{{climate.product_impact}}"{% endif %}>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        {% if climate %}Save{% else %}Create{% endif %}
+    </button>
+</form>
