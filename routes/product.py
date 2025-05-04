@@ -16,9 +16,7 @@ def insert_product():
         name = data['name'],
         category = data['category'],
         price = data['price'],
-        quality = data['quality'],
-        seasonality = data['seasonality'],
-        climate_id = data['climate_id']
+        quality = data['quality']
 
     )
 
@@ -45,8 +43,6 @@ def update_product(product_id):
     product_edited.category = data['category']
     product_edited.price = data['price']
     product_edited.quality = data['quality']
-    product_edited.seasonality = data['seasonality']
-    product_edited.climate_id = data['climate_id']
 
     product_edited.save()
 

@@ -1,0 +1,33 @@
+<form class="c-form"
+      {% if evaluation %}
+      action="{{ url_for('evaluation.update_evaluation', evaluation_id=evaluation.id) }}"
+      {% else %}
+      action="{{ url_for('evaluation.insert_evaluation') }}"
+      {% endif %}
+
+      method="{% if evaluation %}PUT{% else %}POST{% endif %}"
+
+      {% if evaluation %}
+      c-swap="#evaluation-{{evaluation.id}}"
+      {% else %}
+      c-append="#evaluations_list"
+      {% endif %}
+
+      c-reload-container="true">
+
+    <div class="mb-3">
+        <label class="form-label">Id da compra</label>
+        <input type="number" class="form-control" name="buy_id" {% if evaluation %}value="{{evaluation.buy_id}}" {%
+               endif %}>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Classificação</label>
+        <input type="text" class="form-control" name="ranking" {% if evaluation %}value="{{evaluation.ranking}}" {% endif %}>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">
+        {% if evaluation %}Salvar{% else %}Criar{% endif %}
+    </button>
+</form>

@@ -10,14 +10,14 @@
         <button class="btn btn-primary"
             c-get="{{ url_for('buy.buy_edit_form', buy_id=buy.id) }}"
             c-target="#buy-form">
-                Edit
+                Editar
         </button>
 
         <button class="btn btn-danger"
             c-delete="{{ url_for('buy.delete_buy', buy_id=buy.id) }}"
             c-target="#buy-form"
             c-remove-closest="tr">
-                Delete
+                Deletar
         </button>
     </td>
 </tr>

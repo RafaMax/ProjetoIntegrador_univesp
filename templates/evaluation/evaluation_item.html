@@ -1,0 +1,19 @@
+<tr id="evaluation-{{evaluation.id}}">
+    <th scope="row">{{ evaluation.id }}</th>
+    <td>{{ evaluation.buy_id }}</td>
+    <td>{{ evaluation.ranking }}</td>
+    <td>
+        <button class="btn btn-primary"
+            c-get="{{ url_for('evaluation.evaluation_edit_form', evaluation_id=evaluation.id) }}"
+            c-target="#evaluation-form">
+                Editar
+        </button>
+
+        <button class="btn btn-danger"
+            c-delete="{{ url_for('evaluation.delete_evaluation', evaluation_id=evaluation.id) }}"
+            c-target="#evaluation-form"
+            c-remove-closest="tr">
+                Deletar
+        </button>
+    </td>
+</tr>

@@ -16,32 +16,11 @@
         c-reload-container="true">
 
     <div class="mb-3">
-      <label class="form-label">Product id</label>
+      <label class="form-label">Id do produto</label>
       <input type="number" class="form-control" name="product_id" {% if inventory %}value="{{inventory.product_id}}"{% endif %}>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">Current quantity</label>
-        <input type="number" class="form-control" name="current_quantity" {% if inventory %}value="{{inventory.current_quantity}}"{% endif %}>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Losses</label>
-        <input type="number" class="form-control" name="losses" {% if inventory %}value="{{inventory.losses}}"{% endif %}>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Entry</label>
-        <input type="date" class="form-control" name="entry" {% if inventory %}value="{{inventory.entry}}"{% endif %}>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Exit</label>
-        <input type="date" class="form-control" name="exit" {% if inventory %}value="{{inventory.exit}}"{% endif %}>
-    </div>
-
-
     <button type="submit" class="btn btn-primary">
-        {% if inventory %}Save{% else %}Create{% endif %}
+        {% if inventory %}Salvar{% else %}Criar{% endif %}
     </button>
 </form>

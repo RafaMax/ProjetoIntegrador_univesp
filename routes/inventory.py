@@ -14,12 +14,7 @@ def insert_inventory():
     data = request.json
 
     new_inventory = Inventory.create(
-        product_id = data['product_id'],
-        current_quantity = data['current_quantity'],
-        losses = data['losses'],
-        entry = data['entry'],
-        exit = data['exit']
-
+        product_id = data['product_id']
     )
 
     return  render_template('inventory/inventory_item.html', inventory = new_inventory)
@@ -42,10 +37,6 @@ def update_inventory(inventory_id):
     inventory_edited = Inventory.get_by_id(inventory_id)
 
     inventory_edited.product_id = data['product_id']
-    inventory_edited.current_quantity = data['current_quantity']
-    inventory_edited.losses = data['losses']
-    inventory_edited.entry = data['entry']
-    inventory_edited.exit = data['exit']
 
     inventory_edited.save()
 

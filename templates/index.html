@@ -228,13 +228,13 @@
                             </tbody>
                         </table>
                         <div class="container">
-                            <h1 class="text-center">Product management</h1>
+                            <h1 class="text-center">Gestão de produtos</h1>
 
                             <div id="product-form" c-container=" {{url_for('product.product_form')}}"></div>
 
                             <hr>
 
-                            <h2>List of products</h2>
+                            <h2>Lista de produtos</h2>
 
                             <div c-container="{{url_for('product.products_list')}}">
 
@@ -243,40 +243,53 @@
                         </div>
 
                         <div class="container">
-                            <h1 class="text-center">Inventory management</h1>
+                            <h1 class="text-center">Gestão do estoque</h1>
 
                             <div id="inventory-form" c-container=" {{url_for('inventory.inventory_form')}}"></div>
 
                             <hr>
 
-                            <h2>List of inventories</h2>
+                            <h2>Lista de estoques</h2>
 
                             <div c-container="{{url_for('inventory.inventories_list')}}"></div>
                         </div>
 
                         <div class="container">
-                            <h1 class="text-center">Buy management</h1>
+                            <h1 class="text-center">Gestão de compras</h1>
 
                             <div id="buy-form" c-container=" {{url_for('buy.buy_form')}}"></div>
 
                             <hr>
 
-                            <h2>List of buys</h2>
+                            <h2>Lista de compras</h2>
 
                             <div c-container="{{url_for('buy.buys_list')}}"></div>
 
                         </div>
 
                         <div class="container">
-                            <h1 class="text-center">Provider management</h1>
+                            <h1 class="text-center">Gestão de fornecedores</h1>
 
                             <div id="provider-form" c-container=" {{url_for('provider.provider_form')}}"></div>
 
                             <hr>
 
-                            <h2>List of providers</h2>
+                            <h2>Lista de fornecedores</h2>
 
                             <div c-container="{{url_for('provider.providers_list')}}"></div>
+
+                        </div>
+
+                        <div class="container">
+                            <h1 class="text-center">Gestão de avaliação</h1>
+
+                            <div id="evaluation-form" c-container=" {{url_for('evaluation.evaluation_form')}}"></div>
+
+                            <hr>
+
+                            <h2>Lista de avaliações</h2>
+
+                            <div c-container="{{url_for('evaluation.evaluations_list')}}"></div>
 
                         </div>
 

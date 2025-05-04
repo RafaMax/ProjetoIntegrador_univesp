@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id da compra</th>
+        <th scope="col">Classificação</th>
+      </tr>
+    </thead>
+    <tbody id="evaluations_list">
+
+        {% for evaluation in evaluations %}
+            {% include 'evaluation_item.html' %}
+        {% endfor %}
+
+    </tbody>
+  </table>

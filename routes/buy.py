@@ -6,8 +6,8 @@ buy_route = Blueprint('buy', __name__)
 
 @buy_route.route('/')
 def buys_list():
-    buy = Buy.select()
-    return render_template('buy/buys_list.html',buy=buy)
+    buys = Buy.select()
+    return render_template('buy/buys_list.html',buys=buys)
 
 @buy_route.route('/', methods=['POST'])
 def insert_buy():

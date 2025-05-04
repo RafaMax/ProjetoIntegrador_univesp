@@ -1,9 +1,11 @@
 from database.database import db
 from database.models.buy import Buy
+from database.models.evaluation import Evaluation
 from database.models.inventory import Inventory
 from database.models.product import Product
 from database.models.provider import Provider
 from routes.buy import buy_route
+from routes.evaluation import evaluation_route
 from routes.home import home_route
 from routes.inventory import inventory_route
 from routes.product import product_route
@@ -21,6 +23,7 @@ def configure_routes(app):
     app.register_blueprint(inventory_route,url_prefix='/inventories')
     app.register_blueprint(buy_route,url_prefix='/buys')
     app.register_blueprint(provider_route,url_prefix='/providers')
+    app.register_blueprint(evaluation_route,url_prefix='/evaluations')
 
 
 def configure_db():
@@ -29,3 +32,4 @@ def configure_db():
     db.create_tables([Inventory])
     db.create_tables([Buy])
     db.create_tables([Provider])
+    db.create_tables([Evaluation])

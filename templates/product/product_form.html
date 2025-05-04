@@ -16,36 +16,26 @@
         c-reload-container="true">
 
     <div class="mb-3">
-      <label class="form-label">Name</label>
+      <label class="form-label">Nome</label>
       <input type="text" class="form-control" name="name" {% if product %}value="{{product.name}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Category</label>
+        <label class="form-label">Categoria</label>
         <input type="text" class="form-control" name="category" {% if product %}value="{{product.category}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Price</label>
+        <label class="form-label">Preço</label>
         <input type="number" class="form-control" name="price" {% if product %}value="{{product.price}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Quality</label>
+        <label class="form-label">Qualidade</label>
         <input type="text" class="form-control" name="quality" {% if product %}value="{{product.quality}}"{% endif %}>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">Seasonality</label>
-        <input type="text" class="form-control" name="seasonality" {% if product %}value="{{product.seasonality}}"{% endif %}>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Climate id</label>
-        <input type="number" class="form-control" name="climate_id" {% if product %}value="{{product.climate_id}}"{% endif %}>
-    </div>
-
     <button type="submit" class="btn btn-primary">
-        {% if product %}Save{% else %}Create{% endif %}
+        {% if product %}Salvar{% else %}Criar{% endif %}
     </button>
 </form>

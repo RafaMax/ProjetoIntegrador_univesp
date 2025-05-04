@@ -16,36 +16,36 @@
         c-reload-container="true">
 
     <div class="mb-3">
-        <label class="form-label">Date</label>
+        <label class="form-label">Data</label>
         <input type="date" class="form-control" name="date" {% if buy %}value="{{buy.date}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Quantity</label>
+        <label class="form-label">Quantidade</label>
         <input type="number" class="form-control" name="quantity" {% if buy %}value="{{buy.quantity}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Product id</label>
+        <label class="form-label">Id do produto</label>
         <input type="number" class="form-control" name="product_id" {% if buy %}value="{{buy.product_id}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Provider id</label>
+        <label class="form-label">Id do fornecedor</label>
         <input type="number" class="form-control" name="provider_id" {% if buy %}value="{{buy.provider_id}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Cost</label>
+        <label class="form-label">Custo</label>
         <input type="number" class="form-control" name="cost" {% if buy %}value="{{buy.cost}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">User id</label>
+        <label class="form-label">Id do usuario</label>
         <input type="number" class="form-control" name="user_id" {% if buy %}value="{{buy.user_id}}"{% endif %}>
     </div>
 
     <button type="submit" class="btn btn-primary">
-        {% if buy %}Save{% else %}Create{% endif %}
+        {% if buy %}Salvar{% else %}Criar{% endif %}
     </button>
 </form>

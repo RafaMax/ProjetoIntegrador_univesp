@@ -16,26 +16,26 @@
         c-reload-container="true">
 
     <div class="mb-3">
-        <label class="form-label">Name</label>
+        <label class="form-label">Nome</label>
         <input type="text" class="form-control" name="name" {% if provider %}value="{{provider.name}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Contact</label>
+        <label class="form-label">Contato</label>
         <input type="text" class="form-control" name="contact" {% if provider %}value="{{provider.contact}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Quality assessed</label>
+        <label class="form-label">Qualidade avaliada</label>
         <input type="text" class="form-control" name="quality_assessed" {% if provider %}value="{{provider.quality_assessed}}"{% endif %}>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Product type</label>
+        <label class="form-label">Tipo do produto</label>
         <input type="text" class="form-control" name="product_type" {% if provider %}value="{{provider.product_type}}"{% endif %}>
     </div>
 
     <button type="submit" class="btn btn-primary">
-        {% if provider %}Save{% else %}Create{% endif %}
+        {% if provider %}Salvar{% else %}Criar{% endif %}
     </button>
 </form>

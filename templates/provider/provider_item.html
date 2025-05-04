@@ -8,14 +8,14 @@
         <button class="btn btn-primary"
             c-get="{{ url_for('provider.provider_edit_form', provider_id=provider.id) }}"
             c-target="#provider-form">
-                Edit
+                Editar
         </button>
 
         <button class="btn btn-danger"
             c-delete="{{ url_for('provider.delete_provider', provider_id=provider.id) }}"
             c-target="#provider-form"
             c-remove-closest="tr">
-                Delete
+                Deletar
         </button>
     </td>
 </tr>
