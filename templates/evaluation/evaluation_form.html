@@ -21,10 +21,32 @@
                endif %}>
     </div>
 
-    <div class="mb-3">
+    <!--<div class="mb-3">
         <label class="form-label">Classificação</label>
         <input type="text" class="form-control" name="ranking" {% if evaluation %}value="{{evaluation.ranking}}" {% endif %}>
+    </div>-->
+
+    <div>
+        <label class="form-check-label">Classificação</label>
+        <br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ranking" value="A" {% if evaluation and
+                   evaluation.ranking=="A" %} checked {% endif %} checked>
+            <label class="form-check-label">A</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ranking" value="B" {% if evaluation and
+                   evaluation.ranking=="B" %} checked {% endif %}>
+            <label class="form-check-label">B</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ranking" value="C" {% if evaluation and
+                   evaluation.ranking=="C" %} checked {% endif %}>
+            <label class="form-check-label">C</label>
+        </div>
     </div>
+
+    <br>
 
 
     <button type="submit" class="btn btn-primary">
