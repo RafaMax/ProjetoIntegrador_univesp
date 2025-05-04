@@ -57,57 +57,48 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Painel
                     </a>
-                    <div class="sb-sidenav-menu-heading">Interface</div>
+                    <div class="sb-sidenav-menu-heading">
+                        Interface
+                    </div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                        data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Layouts
+                        Avaliações
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                          data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="#">Static Navigation</a>
-                            <a class="nav-link" href="#">Light Sidenav</a>
+                            <a class="nav-link" href="#">
+                                Avaliar produtos</a>
                         </nav>
                     </div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
-                       aria-expanded="false" aria-controls="collapsePages">
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePage1"
+                       aria-expanded="false" aria-controls="collapsePage1">
                         <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                        Páginas
+                        Produtos
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                    <div class="collapse" id="collapsePage1" aria-labelledby="headingTwo"
                          data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                               data-bs-target="#pagesCollapseAuth" aria-expanded="false"
-                               aria-controls="pagesCollapseAuth">
-                                Authentication
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        <nav class="sb-sidenav-menu-nested nav" >
+                            <a class="nav-link" href="#">
+                                Editar produtos
                             </a>
-                            <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
-                                 data-bs-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">Login</a>
-                                    <a class="nav-link" href="#">Register</a>
-                                    <a class="nav-link" href="#">Forgot Password</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                               data-bs-target="#pagesCollapseError" aria-expanded="false"
-                               aria-controls="pagesCollapseError">
-                                Error
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePage2"
+                       aria-expanded="false" aria-controls="collapsePage2">
+                        <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                        Fornecedores
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePage2" aria-labelledby="headingTwo"
+                         data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav" >
+                            <a class="nav-link" href="#">
+                                Editar fornecedores
                             </a>
-                            <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
-                                 data-bs-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">401 Page</a>
-                                    <a class="nav-link" href="#">404 Page</a>
-                                    <a class="nav-link" href="#">500 Page</a>
-                                </nav>
-                            </div>
                         </nav>
                     </div>
                     <div class="sb-sidenav-menu-heading">Relatórios</div>
@@ -127,29 +118,24 @@
             </div>
         </nav>
     </div>
+
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Painel</h1>
+                <h2 class="mt-4">Painel do Administrador</h2>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Painel</li>
                 </ol>
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
-                        <div class="card bg-primary text-white mb-4">
-                            <div class="card-body">Iniciar nova Compra</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Detalhes</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6">
                         <div class="card bg-warning text-white mb-4">
-                            <div class="card-body">Exige atenção</div>
+                            <div class="card-body">
+                                Exige atenção
+                            </div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Detalhes</a>
+                                <a class="small text-white stretched-link" href="#">
+                                    Detalhes
+                                </a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                             </div>
                         </div>
@@ -173,6 +159,8 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="row">
                     <!-- Grafico de linha-->
                     <!-- <div class="col-xl-6">
@@ -195,6 +183,7 @@
                         </div>
                     </div> -->
                 </div>
+                
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
@@ -227,71 +216,10 @@
 
                             </tbody>
                         </table>
-                        <div class="container">
-                            <h1 class="text-center">Gestão de produtos</h1>
+                    </div>
 
-                            <div id="product-form" c-container=" {{url_for('product.product_form')}}"></div>
-
-                            <hr>
-
-                            <h2>Lista de produtos</h2>
-
-                            <div c-container="{{url_for('product.products_list')}}">
-
-                            </div>
-
-                        </div>
-
-                        <div class="container">
-                            <h1 class="text-center">Gestão do estoque</h1>
-
-                            <div id="inventory-form" c-container=" {{url_for('inventory.inventory_form')}}"></div>
-
-                            <hr>
-
-                            <h2>Lista de estoques</h2>
-
-                            <div c-container="{{url_for('inventory.inventories_list')}}"></div>
-                        </div>
-
-                        <div class="container">
-                            <h1 class="text-center">Gestão de compras</h1>
-
-                            <div id="buy-form" c-container=" {{url_for('buy.buy_form')}}"></div>
-
-                            <hr>
-
-                            <h2>Lista de compras</h2>
-
-                            <div c-container="{{url_for('buy.buys_list')}}"></div>
-
-                        </div>
-
-                        <div class="container">
-                            <h1 class="text-center">Gestão de fornecedores</h1>
-
-                            <div id="provider-form" c-container=" {{url_for('provider.provider_form')}}"></div>
-
-                            <hr>
-
-                            <h2>Lista de fornecedores</h2>
-
-                            <div c-container="{{url_for('provider.providers_list')}}"></div>
-
-                        </div>
-
-                        <div class="container">
-                            <h1 class="text-center">Gestão de avaliação</h1>
-
-                            <div id="evaluation-form" c-container=" {{url_for('evaluation.evaluation_form')}}"></div>
-
-                            <hr>
-
-                            <h2>Lista de avaliações</h2>
-
-                            <div c-container="{{url_for('evaluation.evaluations_list')}}"></div>
-
-                        </div>
+                    <div>
+                        
 
                     </div>
                 </div>
