@@ -260,3 +260,13 @@ footer{
         box-shadow: 0 .1rem 2rem rgba(0,0,0,.05)
     }
 }
+
+
+th, td {
+    padding: 15px;
+    text-align: left;
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+  }
