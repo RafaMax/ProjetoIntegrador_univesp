@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*!
 * Start Bootstrap - SB Admin v7.0.7 (https://startbootstrap.com/template/sb-admin)
 * Copyright 2013-2023 Start Bootstrap
@@ -91,7 +92,25 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.wrapper {
+    display: flex;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+    background-color: #FFF;
+}
+
 body {
+  font-family: 'Outfit', sans-serif;
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -122,6 +141,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
 }
+
 @media (min-width: 1200px) {
   h1, .h1 {
     font-size: 2.5rem;
@@ -228,8 +248,7 @@ mark, .mark {
   background-color: var(--bs-highlight-bg);
 }
 
-sub,
-sup {
+sub, sup {
   position: relative;
   font-size: 0.75em;
   line-height: 0;
@@ -272,6 +291,7 @@ pre {
   overflow: auto;
   font-size: 0.875em;
 }
+
 pre code {
   font-size: inherit;
   color: inherit;
@@ -283,6 +303,7 @@ code {
   color: var(--bs-code-color);
   word-wrap: break-word;
 }
+
 a > code {
   color: inherit;
 }
@@ -325,12 +346,7 @@ th {
   text-align: -webkit-match-parent;
 }
 
-thead,
-tbody,
-tfoot,
-tr,
-td,
-th {
+thead, tbody, tfoot, tr, td, th {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
