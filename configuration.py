@@ -13,6 +13,7 @@ from routes.provider import provider_route
 from routes.avaliacao import avaliacao_route
 from routes.gestaof import gestaof_route
 from routes.gestaop import gestaop_route
+from routes.login import login_route
 
 
 def configure_all(app):
@@ -21,7 +22,7 @@ def configure_all(app):
 
 
 def configure_routes(app):
-    app.register_blueprint(home_route)
+    app.register_blueprint(home_route,url_prefix='/')
     app.register_blueprint(product_route,url_prefix='/products')
     app.register_blueprint(inventory_route,url_prefix='/inventories')
     app.register_blueprint(buy_route,url_prefix='/buys')
@@ -30,6 +31,8 @@ def configure_routes(app):
     app.register_blueprint(avaliacao_route,url_prefix='/avaliacao')
     app.register_blueprint(gestaop_route,url_prefix='/produtos')
     app.register_blueprint(gestaof_route,url_prefix='/fornecedores')
+    app.register_blueprint(login_route,url_prefix='/login')
+
 
 
 def configure_db():
