@@ -220,6 +220,10 @@ a.sidebar-link:hover{
     transform: translateY(-10.5px)
 }
 
+.card:hover .icon{
+    color: #FFF;
+}
+
 .content{
     flex: 11auto;
 }
