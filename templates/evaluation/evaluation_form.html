@@ -21,10 +21,11 @@
                endif %}>
     </div>
 
-    <!--<div class="mb-3">
-        <label class="form-label">Classificação</label>
-        <input type="text" class="form-control" name="ranking" {% if evaluation %}value="{{evaluation.ranking}}" {% endif %}>
-    </div>-->
+    <div class="mb-3">
+        <label class="form-label">Observação</label>
+        <input type="text" class="form-control" name="note" {% if evaluation %}value="{{evaluation.note}}" {%
+               endif %}>
+    </div>
 
     <div>
         <label class="form-check-label">Classificação</label>

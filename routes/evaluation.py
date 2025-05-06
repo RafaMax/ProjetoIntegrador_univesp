@@ -15,7 +15,9 @@ def insert_evaluation():
 
     new_evaluation = Evaluation.create(
         buy_id = data['buy_id'],
+        note=data['note'],
         ranking = data['ranking']
+
     )
 
     return  render_template('evaluation/evaluation_item.html', evaluation = new_evaluation)
@@ -38,6 +40,7 @@ def update_evaluation(evaluation_id):
     evaluation_edited = Evaluation.get_by_id(evaluation_id)
 
     evaluation_edited.buy_id = data['buy_id']
+    evaluation_edited.note = data['note']
     evaluation_edited.ranking = data['ranking']
 
     evaluation_edited.save()
