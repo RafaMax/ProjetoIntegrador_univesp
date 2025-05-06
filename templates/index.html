@@ -31,28 +31,42 @@
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                            data-bs-target="#user" aria-expanded="false" aria-controls="user">
+                            data-bs-target="#avaliacao" aria-expanded="false" aria-controls="avaliacao">
                             <i class='bx bxs-user-account'></i>
                             <span>Avaliações</span>
                         </a>
-                        <ul id="user" class="sidebar-dropdown list-unstyled collapse" data-bs-parent= "#sidebar">
+                        <ul id="avaliacao" class="sidebar-dropdown list-unstyled collapse" data-bs-parent= "#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">
+                                <a class="sidebar-link" href="{{url_for('avaliacao.avaliacao')}}">
                                     Avaliar produto
                                 </a>
                         </ul>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class='bx bxs-report'></i>
+                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                            data-bs-target="#produtos" aria-expanded="false" aria-controls="produtos">
+                            <i class='bx bxs-user-account'></i>
                             <span>Produtos</span>
                         </a>
+                        <ul id="produtos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent= "#sidebar">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{url_for('produtos.gestaop')}}">
+                                    Editar produto
+                                </a>
+                        </ul>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class='bx bxs-notepad'></i>
+                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                            data-bs-target="#fornecedores" aria-expanded="false" aria-controls="fornecedores">
+                            <i class='bx bxs-user-account'></i>
                             <span>Fornecedores</span>
                         </a>
+                        <ul id="fornecedores" class="sidebar-dropdown list-unstyled collapse" data-bs-parent= "#sidebar">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="{{url_for('fornecedores.gestaof')}}">
+                                    Editar fornecedor
+                                </a>
+                        </ul>
                     </li>
                 </ul>
                 <div class="sidebar-footer">
@@ -64,7 +78,7 @@
             </aside>
             <div class="main">
                 <nav class="navbar navbar-expand px-4 py-2">
-                 <div class="mb-0 px-1 py-3">
+                 <div class="mb-0">
                     <h1> SUPERMERCADO EVA </h1>
                  </div>                
                 </nav>
@@ -158,7 +172,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-        
+                                </div>
                             </div>
                         </div>
                     </div>

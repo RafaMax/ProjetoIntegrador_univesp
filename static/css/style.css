@@ -12,8 +12,10 @@ body{
     font-family: 'Outfit', sans-serif;
 }
 
-h1{
+h1 {
     font-size: 28px;
+    padding: 15px;
+    
 }
 
 h3{
@@ -214,7 +216,7 @@ a.sidebar-link:hover{
 
 .card:hover{
     background-color: #9ecae1;
-    color: #3182BD;
+    color: #145b8e;
     transform: translateY(-10.5px)
 }
 
@@ -261,12 +263,44 @@ footer{
     }
 }
 
+table{
+    width:100%;
+    color:#FFF;
+    transition: .4s;
+    cursor: pointer;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    border-color: rgba(231,234,243,0.7);
+  }
+
+th{
+    background-color: #3182BD;
+    color: white;
+}
+
+td{
+    color: #5c5f65
+}
 
 th, td {
     padding: 15px;
     text-align: left;
   }
 
-  th, td {
+h2 {
+    padding: 15px
+}
+
+th, td {
     border-bottom: 1px solid #ddd;
-  }
+}
+
+.table:hover{
+    background-color: #FFF;
+    color: #3182BD;
+    transform: translateY(-10.5px)
+}
+
+button{
+    background-color: #000;
+}
