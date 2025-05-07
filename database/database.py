@@ -1,5 +1,6 @@
 from peewee import MySQLDatabase
 
+
 #db = MySQLDatabase('univesp_pi.db')
 db = MySQLDatabase(
     'univesp_db',
