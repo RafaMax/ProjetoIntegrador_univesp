@@ -6,11 +6,12 @@
         <th scope="col">Categoria</th>
         <th scope="col">Preço</th>
         <th scope="col">Qualidade</th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody id="products_list">
 
-        {% for product in products %}
+        {% for Product in products %}
             {% include 'product_item.html' %}
         {% endfor %}
 
