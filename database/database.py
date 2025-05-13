@@ -5,7 +5,7 @@ from peewee import MySQLDatabase
 #Banco de Dados Mysql online
 #mysql://root:GCruUsgoPnknKFPZLewtKKWftSVPNYtD@interchange.proxy.rlwy.net:45565/railway
 db = MySQLDatabase(
-    'univesp_db',
+    'railway',
     user='root',
     password='GCruUsgoPnknKFPZLewtKKWftSVPNYtD',
     host='interchange.proxy.rlwy.net',

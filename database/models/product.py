@@ -11,3 +11,4 @@ class Product(Model):
 
     class Meta:
         database = db
+       
