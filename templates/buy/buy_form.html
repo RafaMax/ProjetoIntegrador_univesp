@@ -20,19 +20,32 @@
         <input type="date" class="form-control" name="date" {% if buy %}value="{{buy.date}}"{% endif %}>
     </div>
 
+    
+
+    <div class="mb-3">
+    <label class="form-label">Produto</label>
+    {% if buy %}
+        <input type="text" class="form-control" value="{{ buy.product.name }}" readonly>
+        <input type="hidden" name="product_id" value="{{ buy.product_id }}">
+    {% else %}
+        <input type="number" class="form-control" name="product_id">
+    {% endif %}
+</div>
+
+    <div class="mb-3">
+    <label class="form-label">Fornecedor</label>
+    <select name="provider_id" id="provider_id" class="form-control">
+        {% for provider in providers %}
+            <option value="{{ provider.id }}"
+                {% if buy and buy.provider_id == provider.id %}selected{% endif %}>
+                {{ provider.name }}
+            </option>
+        {% endfor %}
+    </select>
+</div>
     <div class="mb-3">
         <label class="form-label">Quantidade</label>
         <input type="number" class="form-control" name="quantity" {% if buy %}value="{{buy.quantity}}"{% endif %}>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Id do produto</label>
-        <input type="number" class="form-control" name="product_id" {% if buy %}value="{{buy.product_id}}"{% endif %}>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Id do fornecedor</label>
-        <input type="number" class="form-control" name="provider_id" {% if buy %}value="{{buy.provider_id}}"{% endif %}>
     </div>
 
     <div class="mb-3">
@@ -40,10 +53,7 @@
         <input type="number" class="form-control" name="cost" {% if buy %}value="{{buy.cost}}"{% endif %}>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">Id do usuario</label>
-        <input type="number" class="form-control" name="user_id" {% if buy %}value="{{buy.user_id}}"{% endif %}>
-    </div>
+    
 
     <button type="submit" class="btn btn-dark mt-3 mb-2">
         {% if buy %}Salvar{% else %}Criar{% endif %}

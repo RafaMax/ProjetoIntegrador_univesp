@@ -1,12 +1,12 @@
 <tr id="buy-{{buy.id}}">
     <th scope="row">{{ buy.id }}</th>
     <td>{{ buy.date }}</td>
+    <td>{{ buy.product.name }}</td>
+    <td>{{ buy.provider.name }}</td>
     <td>{{ buy.quantity }}</td>
-    <td>{{ buy.product_id }}</td>
-    <td>{{ buy.provider_id }}</td>
     <td>{{ buy.cost }}</td>
-    <td>{{ buy.user_id }}</td>
-    <td>
+    
+    <td> 
         <button class="btn btn-primary"
             c-get="{{ url_for('buy.buy_edit_form', buy_id=buy.id) }}"
             c-target="#buy-form">

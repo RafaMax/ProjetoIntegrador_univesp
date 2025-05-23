@@ -1,4 +1,8 @@
 from flask import render_template, Blueprint, request
+from peewee import DoesNotExist
+
+from database.models.product import Product
+from database.models.provider import Provider
 
 from database.models.buy import Buy
 
@@ -12,28 +16,33 @@ def buys_list():
 @buy_route.route('/', methods=['POST'])
 def insert_buy():
     data = request.json
+    try:
+        product = Product.get_by_id(data['product_id'])
+        provider = Provider.get_by_id(data['provider_id'])
+    except Product.DoesNotExist:
+        return "Produto não encontrado", 404
+    except Provider.DoesNotExist:
+        return "Fornecedor não encontrado", 404
 
     new_buy = Buy.create(
         date = data['date'],
+        product = product,
+        provider = provider,
         quantity = data['quantity'],
-        product_id = data['product_id'],
-        provider_id = data['provider_id'],
         cost = data['cost'],
-        user_id = data['user_id']
-
     )
 
-    return  render_template('buy/buy_item.html', buy = new_buy)
-
+    return render_template('buy/buy_item.html', buy=new_buy, product=product, provider=provider)
 @buy_route.route('/new')
 def buy_form():
-    return render_template('buy/buy_form.html')
+    providers = Provider.select()
+    return render_template('buy/buy_form.html',providers=providers)
 
 @buy_route.route('/<int:buy_id>/edit')
 def buy_edit_form(buy_id):
     buy = Buy.get_by_id(buy_id)
-
-    return render_template('buy/buy_form.html',buy=buy)
+    providers = Provider.select()
+    return render_template('buy/buy_form.html',buy=buy,providers=providers)
 
 
 @buy_route.route('/<int:buy_id>/update', methods=['PUT'])
@@ -44,10 +53,8 @@ def update_buy(buy_id):
 
     buy_edited.date = data['date']
     buy_edited.quantity = data['quantity']
-    buy_edited.product_id = data['product_id']
-    buy_edited.provider_id = data['provider_id']
     buy_edited.cost = data['cost']
-    buy_edited.user_id = data['user_id']
+    
 
     buy_edited.save()
 
