@@ -2,6 +2,7 @@ from flask import render_template, Blueprint, request
 
 from database.models.provider import Provider
 
+
 provider_route = Blueprint('provider', __name__)
 
 @provider_route.route('/')
@@ -15,9 +16,7 @@ def insert_provider():
 
     new_provider = Provider.create(
         name = data['name'],
-        contact = data['contact'],
-        quality_assessed = data['quality_assessed'],
-        product_type = data['product_type']
+        
 
     )
 
@@ -41,9 +40,7 @@ def update_provider(provider_id):
     provider_edited = Provider.get_by_id(provider_id)
 
     provider_edited.name = data['name']
-    provider_edited.contact = data['contact']
-    provider_edited.quality_assessed = data['quality_assessed']
-    provider_form.product_type = data['product_type']
+    
 
     provider_edited.save()
 

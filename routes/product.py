@@ -16,7 +16,7 @@ def insert_product():
         name = data['name'],
         category = data['category'],
         price = data['price'],
-        quality = data['quality']
+        
 
     )
 
@@ -42,7 +42,7 @@ def update_product(product_id):
     product_edited.name = data['name']
     product_edited.category = data['category']
     product_edited.price = data['price']
-    product_edited.quality = data['quality']
+    
 
     product_edited.save()
 

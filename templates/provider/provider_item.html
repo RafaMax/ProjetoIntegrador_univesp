@@ -1,9 +1,6 @@
 <tr id="provider-{{provider.id}}">
     <th scope="row">{{ provider.id }}</th>
     <td>{{ provider.name }}</td>
-    <td>{{ provider.contact }}</td>
-    <td>{{ provider.quality_assessed }}</td>
-    <td>{{ provider.product_type }}</td>
     <td>
         <button class="btn btn-primary"
             c-get="{{ url_for('provider.provider_edit_form', provider_id=provider.id) }}"
