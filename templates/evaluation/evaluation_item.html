@@ -1,8 +1,9 @@
 <tr id="evaluation-{{evaluation.id}}">
     <th scope="row">{{ evaluation.id }}</th>
-    <td>{{ evaluation.buy_id }}</td>
-    <td>{{ evaluation.note }}</td>
-    <td>{{ evaluation.ranking }}</td>
+    <td>{{ evaluation.buy.date }}</td>
+    <td>{{ evaluation.product.name }}</td>
+    <td>{{ evaluation.quantidade_avaliada }}</td>
+    <td>{{ evaluation.qualidade_avaliada }}</td>
     <td>
         <button class="btn btn-primary"
             c-get="{{ url_for('evaluation.evaluation_edit_form', evaluation_id=evaluation.id) }}"

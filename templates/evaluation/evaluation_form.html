@@ -15,39 +15,76 @@
 
       c-reload-container="true">
 
-    <div class="mb-3">
-        <label class="form-label">Id da compra</label>
-        <input type="number" class="form-control" name="buy_id" {% if evaluation %}value="{{evaluation.buy_id}}" {%
-               endif %}>
-    </div>
+    <script>
+    // Dicionário de produtos por data (passado do backend para o JS)
+    const productsByDate = {{ products_by_date|tojson }};
+    function updateProducts() {
+        const dateSelect = document.getElementById('buy_date');
+        const productSelect = document.getElementById('product_id');
+        const selectedDate = dateSelect.value;
+        // Limpa opções antigas
+        productSelect.innerHTML = '<option value="" disabled selected>Selecione um produto</option>';
+        if (productsByDate[selectedDate]) {
+            productsByDate[selectedDate].forEach(prod => {
+                const opt = document.createElement('option');
+                opt.value = prod.id;
+                opt.textContent = prod.name;
+                productSelect.appendChild(opt);
+            });
+        }
+    }
+</script>
+
+<div class="mb-3">
+    <label class="form-label">Data da Compra</label>
+    <select name="buy_date" id="buy_date" class="form-control" required onchange="updateProducts()">
+    <option value="" disabled selected>Selecione uma data</option>
+    {% for buy in buys|unique(attribute='date') %}
+        <option value="{{ buy.date.strftime('%Y-%m-%d') }}">{{ buy.date.strftime('%Y-%m-%d') }}</option>
+    {% endfor %}
+</select>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Produto</label>
+    <select name="product_id" id="product_id" class="form-control" required>
+    <option value="" disabled selected>Selecione um produto</option>
+</select>
+</div>
 
     <div class="mb-3">
-        <label class="form-label">Observação</label>
-        <input type="text" class="form-control" name="note" {% if evaluation %}value="{{evaluation.note}}" {%
-               endif %}>
-    </div>
+        <label class="form-label">Quantidade Avaliada</label><br>
+        <div class="btn-group" role="group" aria-label="Quantidade Avaliada">
+            <input type="radio" class="btn-check" name="quantidade_avaliada" id="quantidade_pouca" value="Pouca" required
+                {% if evaluation and evaluation.quantidade_avaliada == "Pouca" %}checked{% endif %}>
+            <label class="btn btn-outline-primary" for="quantidade_pouca">Pouca</label>
 
-    <div>
-        <label class="form-check-label">Classificação</label>
-        <br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="ranking" value="A" {% if evaluation and
-                   evaluation.ranking=="A" %} checked {% endif %} checked>
-            <label class="form-check-label">A</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="ranking" value="B" {% if evaluation and
-                   evaluation.ranking=="B" %} checked {% endif %}>
-            <label class="form-check-label">B</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="ranking" value="C" {% if evaluation and
-                   evaluation.ranking=="C" %} checked {% endif %}>
-            <label class="form-check-label">C</label>
+            <input type="radio" class="btn-check" name="quantidade_avaliada" id="quantidade_ideal" value="Ideal" required
+                {% if evaluation and evaluation.quantidade_avaliada == "Ideal" %}checked{% endif %}>
+            <label class="btn btn-outline-primary" for="quantidade_ideal">Ideal</label>
+
+            <input type="radio" class="btn-check" name="quantidade_avaliada" id="quantidade_muita" value="Muita" required
+                {% if evaluation and evaluation.quantidade_avaliada == "Muita" %}checked{% endif %}>
+            <label class="btn btn-outline-primary" for="quantidade_muita">Muita</label>
         </div>
     </div>
 
-    <br>
+    <div class="mb-3">
+        <label class="form-label">Qualidade Avaliada</label><br>
+        <div class="btn-group" role="group" aria-label="Qualidade Avaliada">
+            <input type="radio" class="btn-check" name="qualidade_avaliada" id="qualidade_ruim" value="Ruim" required
+                {% if evaluation and evaluation.qualidade_avaliada == "Ruim" %}checked{% endif %}>
+            <label class="btn btn-outline-success" for="qualidade_ruim">Ruim</label>
+
+            <input type="radio" class="btn-check" name="qualidade_avaliada" id="qualidade_bom" value="Bom" required
+                {% if evaluation and evaluation.qualidade_avaliada == "Bom" %}checked{% endif %}>
+            <label class="btn btn-outline-success" for="qualidade_bom">Bom</label>
+
+            <input type="radio" class="btn-check" name="qualidade_avaliada" id="qualidade_top" value="Top" required
+                {% if evaluation and evaluation.qualidade_avaliada == "Top" %}checked{% endif %}>
+            <label class="btn btn-outline-success" for="qualidade_top">Top</label>
+        </div>
+    </div>
 
 
     <button type="submit" class="btn btn-dark mt-3 mb-2">
