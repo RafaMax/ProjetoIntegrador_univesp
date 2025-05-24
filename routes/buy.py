@@ -36,13 +36,15 @@ def insert_buy():
 @buy_route.route('/new')
 def buy_form():
     providers = Provider.select()
-    return render_template('buy/buy_form.html',providers=providers)
+    products = Product.select()
+    return render_template('buy/buy_form.html',providers=providers, products=products)
 
 @buy_route.route('/<int:buy_id>/edit')
 def buy_edit_form(buy_id):
     buy = Buy.get_by_id(buy_id)
     providers = Provider.select()
-    return render_template('buy/buy_form.html',buy=buy,providers=providers)
+    products = Product.select()
+    return render_template('buy/buy_form.html',buy=buy,providers=providers, products=products)
 
 
 @buy_route.route('/<int:buy_id>/update', methods=['PUT'])

@@ -28,13 +28,19 @@
         <input type="text" class="form-control" value="{{ buy.product.name }}" readonly>
         <input type="hidden" name="product_id" value="{{ buy.product_id }}">
     {% else %}
-        <input type="number" class="form-control" name="product_id">
+        <select name="product_id" class="form-control" required>
+    <option value="" disabled selected>Selecione um produto</option>
+    {% for product in products %}
+        <option value="{{ product.id }}">{{ product.name }}</option>
+    {% endfor %}
+</select>
     {% endif %}
 </div>
 
     <div class="mb-3">
     <label class="form-label">Fornecedor</label>
-    <select name="provider_id" id="provider_id" class="form-control">
+    <select name="provider_id" id="provider_id" class="form-control" required>
+        <option value="" disabled selected>Selecione um fornecedor</option>
         {% for provider in providers %}
             <option value="{{ provider.id }}"
                 {% if buy and buy.provider_id == provider.id %}selected{% endif %}>
@@ -42,6 +48,7 @@
             </option>
         {% endfor %}
     </select>
+</div>
 </div>
     <div class="mb-3">
         <label class="form-label">Quantidade</label>
