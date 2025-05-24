@@ -20,7 +20,9 @@ def quantidade_muita():
     for av in avaliacoes:
         result.append({
             "produto": av.product.name,
-            "quantidade_avaliada": av.quantidade_avaliada
+            
+            "data_compra": av.buy.date.strftime('%d/%m/%Y'),  # Data da compra
+            
         })
     return jsonify(result)
 
@@ -31,7 +33,7 @@ def quantidade_pouca():
     for av in avaliacoes:
         result.append({
             "produto": av.product.name,
-            "quantidade_avaliada": av.quantidade_avaliada
+            "data_compra": av.buy.date.strftime('%d/%m/%Y'),  # Data da compra
         })
     return jsonify(result)
 
@@ -42,7 +44,7 @@ def quantidade_ideal():
     for av in avaliacoes:
         result.append({
             "produto": av.product.name,
-            "quantidade_avaliada": av.quantidade_avaliada
+            "data_compra": av.buy.date.strftime('%d/%m/%Y'),  # Data da compra
         })
     return jsonify(result)
     
