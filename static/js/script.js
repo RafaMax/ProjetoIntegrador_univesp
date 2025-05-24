@@ -5,3 +5,4 @@ hamburguer.addEventListener("click", function(){
     toggler.classList.toggle("bx-chevrons-right");
     toggler.classList.toggle("bx-chevrons-left");
  });
+ 

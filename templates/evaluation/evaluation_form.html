@@ -1,3 +1,4 @@
+
 <form class="c-form"
       {% if evaluation %}
       action="{{ url_for('evaluation.update_evaluation', evaluation_id=evaluation.id) }}"
@@ -15,42 +16,28 @@
 
       c-reload-container="true">
 
-    <script>
-    // Dicionário de produtos por data (passado do backend para o JS)
-    const productsByDate = {{ products_by_date|tojson }};
-    function updateProducts() {
-        const dateSelect = document.getElementById('buy_date');
-        const productSelect = document.getElementById('product_id');
-        const selectedDate = dateSelect.value;
-        // Limpa opções antigas
-        productSelect.innerHTML = '<option value="" disabled selected>Selecione um produto</option>';
-        if (productsByDate[selectedDate]) {
-            productsByDate[selectedDate].forEach(prod => {
-                const opt = document.createElement('option');
-                opt.value = prod.id;
-                opt.textContent = prod.name;
-                productSelect.appendChild(opt);
-            });
-        }
-    }
-</script>
+    
 
 <div class="mb-3">
-    <label class="form-label">Data da Compra</label>
-    <select name="buy_date" id="buy_date" class="form-control" required onchange="updateProducts()">
-    <option value="" disabled selected>Selecione uma data</option>
-    {% for buy in buys|unique(attribute='date') %}
-        <option value="{{ buy.date.strftime('%Y-%m-%d') }}">{{ buy.date.strftime('%Y-%m-%d') }}</option>
+    <label class="form-label">Compra</label>
+    <select name="buy_id" id="buy_id" class="form-control" required>
+        <option value="" disabled selected>Selecione uma compra</option>
+        {% for buy in buys %}
+            <option value="{{ buy.id }}">
+                {{ buy.date.strftime('%Y-%m-%d') }} - {{ buy.product.name }}
+            </option>
+        {% endfor %}
+    </select>
+</div>
+    <div class="mb-3">
+        <label class="form-label">Produto</label>
+        <select name="product_id" id="product_id" class="form-control" required>
+    <option value="" disabled selected>Selecione um produto</option>
+    {% for product in products %}
+        <option value="{{ product.id }}">{{ product.name }}</option>
     {% endfor %}
 </select>
-</div>
-
-<div class="mb-3">
-    <label class="form-label">Produto</label>
-    <select name="product_id" id="product_id" class="form-control" required>
-    <option value="" disabled selected>Selecione um produto</option>
-</select>
-</div>
+    </div>
 
     <div class="mb-3">
         <label class="form-label">Quantidade Avaliada</label><br>
