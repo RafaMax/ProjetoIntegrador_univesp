@@ -38,9 +38,8 @@ def configure_routes(app):
 
 def configure_db():
     db.connect()
-    db.create_tables([Product])
+    db.create_tables([Product,Provider])
     db.create_tables([ProductProvider])
-    db.create_tables([Inventory])
-    db.create_tables([Buy])
-    db.create_tables([Provider])
+    db.create_tables([Inventory,Buy])
     db.create_tables([Evaluation])
+    
