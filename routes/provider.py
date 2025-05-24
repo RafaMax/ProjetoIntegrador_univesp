@@ -7,8 +7,8 @@ provider_route = Blueprint('provider', __name__)
 
 @provider_route.route('/')
 def providers_list():
-    provider = Provider.select()
-    return render_template('provider/providers_list.html',provider=provider)
+    providers = Provider.select()
+    return render_template('provider/providers_list.html',providers=providers)
 
 @provider_route.route('/', methods=['POST'])
 def insert_provider():

@@ -5,8 +5,8 @@ product_route = Blueprint('product', __name__)
 
 @product_route.route('/')
 def products_list():
-    product = Product.select()
-    return render_template('product/products_list.html',product=product)
+    products = Product.select()
+    return render_template('product/products_list.html',products=products)
 
 @product_route.route('/',methods=['POST'])
 def insert_product():
