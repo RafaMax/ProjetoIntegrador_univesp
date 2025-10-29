@@ -5,11 +5,11 @@ from peewee import MySQLDatabase
 #Banco de Dados Mysql online
 #mysql://root:GCruUsgoPnknKFPZLewtKKWftSVPNYtD@interchange.proxy.rlwy.net:45565/railway
 db = MySQLDatabase(
-    'railway',
-    user='root',
-    password='GCruUsgoPnknKFPZLewtKKWftSVPNYtD',
-    host='interchange.proxy.rlwy.net',
-    port=45565 
+    'Univesp_PI1',
+    user='admin',
+    password='ProjetoIntegrador2',
+    host='database-1.c1ioo442c1m1.us-east-2.rds.amazonaws.com',
+    port=3306
 )
 """CREATE TABLE itens_compra (
     item_id INT AUTO_INCREMENT PRIMARY KEY,
